@@ -21,7 +21,6 @@ public class Login_StepDefs {
     @When("kullanıcı sirket olarak  BİMSER ACADEMY seçtiğinde")
     public void kullanıcıSirketOlarakBİMSERACADEMYSeçtiğinde() {
 
-        //loginPage.sirketIsmiDropdown.sendKeys(ConfigurationReader.getProperty("sirket_ismi"));
         loginPage.dropdownArrow.click();
         loginPage.BimserAcademyDropdownValue.click();
 
@@ -71,6 +70,66 @@ public class Login_StepDefs {
 
         Assert.assertTrue(loginPage.hataUyarisi.isDisplayed());
 
+    }
+
+
+    @When("Kullanıcı, şirket İsmini “BİMSER ACADEMY”seçebilmeli")
+    public void kullanıcı_şirket_ismini_bimser_academy_seçebilmeli() {
+        loginPage.sirketIsmiDropdown.click();
 
     }
+
+    @When("Kullanıcı, doğru kullanıcı adı girmeli")
+    public void kullanıcı_doğru_kullanıcı_adı_girmeli() {
+        loginPage.kullaniciAdiInputBox.sendKeys("BEAM");
+
+    }
+
+    @When("Kullanıcı yanlış şifre girmeli")
+    public void kullanıcı_yanlış_şifre_girmeli() {
+        loginPage.sifreInputBox.sendKeys("13579");
+
+    }
+
+    @When("Kullanıcı, giriş butonuna tıklayabilmeli")
+    public void kullanıcı_giriş_butonuna_tıklayabilmeli() {
+        loginPage.girisButton.click();
+
+
+    }
+
+    @When("Kullanıcı hata uyarısı almalı")
+    public void kullanıcı_hata_uyarısı_almalı() {
+        loginPage.hataUyarisi.isDisplayed();
+
+    }
+
+    @Then("Kullanıcı “Tamam” butonuna basabilmeli")
+    public void kullanıcı_tamam_butonuna_basabilmeli() {
+        loginPage.tamamButonu.click();
+
+    }
+
+
+    @Given("Kullanıcı, yanlış kullanıcı adı girmeli")
+    public void kullanıcı_yanlış_kullanıcı_adı_girmeli() {
+
+        loginPage.kullaniciAdiInputBox.sendKeys("Bimser");
+    }
+
+    @When("Kullanıcı doğru şifre girmeli")
+    public void kullanıcı_doğru_şifre_girmeli() {
+        loginPage.sifreInputBox.sendKeys("Bc3414314");
+
+    }
+
+
+
+
+
+
+
 }
+
+
+
