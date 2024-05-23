@@ -2,7 +2,7 @@
 Feature: Sisteme giriş
   # Enter feature description here
 
-@login
+ @login
   Scenario: Başarılı Giriş Senaryosu
     Given kullanıcı giriş ekranındadır
     When kullanıcı sirket olarak  BİMSER ACADEMY seçtiğinde
