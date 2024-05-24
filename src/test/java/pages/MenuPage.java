@@ -5,24 +5,24 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class MenüPage {
+public class MenuPage {
 
+    public MenuPage() {
+        PageFactory.initElements(Driver.getDriver(),this);
+    }
 
+    @FindBy(xpath = "//*[@id='init-app-menu']")
+    public WebElement opsiyonTusu;
 
-    @FindBy(xpath = "//button[@class='active']")
-    public WebElement opsiyonTuşu;
-
-    @FindBy(xpath ="//div[@class='app-menu-item active']")
+    @FindBy(xpath ="//*[@title='Sistem']")
     public WebElement sistemButonu;
 
-    @FindBy(xpath = "//div[@data-id='mnCommonDefinition']/span")
+    @FindBy(xpath = "//*[@title='Ortak Tanımlar']")
     public WebElement ortakTanimlarButonu;
 
     @FindBy(xpath ="//h3[.='Tatil Günleri']")
     public WebElement tatilGunleriButonu;
 
-    @FindBy(id = "TASPxRoundPanel1_xlbHeader")
-    public WebElement tatilGünleriBasligi;
 
 
 

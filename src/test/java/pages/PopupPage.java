@@ -5,10 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class Popup_Page {
-    public Popup_Page(){
+public class PopupPage {
 
-
+    public PopupPage(){
         PageFactory.initElements(Driver.getDriver(), this);
 
     }
@@ -21,5 +20,6 @@ public class Popup_Page {
 
     @FindBy (xpath = "//span[@id='xppcProcurationList_xlbProcurationHeader']")
     public WebElement kullanıcıSecimEkranıHeader;
+
 
 }

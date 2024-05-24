@@ -8,9 +8,10 @@ import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.Login_Page;
-import pages.MenüPage;
-import pages.Popup_Page;
+import pages.LoginPage;
+import pages.MenuPage;
+import pages.PopupPage;
+import pages.TatilGunleriPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
@@ -18,9 +19,9 @@ import java.time.Duration;
 
 public class Menu_StepDef {
 
-    Login_Page loginPage = new Login_Page();
-    MenüPage menüPage = new MenüPage();
-    Popup_Page popupPage = new Popup_Page();
+    LoginPage loginPage = new LoginPage();
+    MenuPage menuPage = new MenuPage();
+    PopupPage popupPage = new PopupPage();
 
 
 
@@ -42,33 +43,33 @@ public class Menu_StepDef {
     @And("Kullanıcı Opsiyon tuşuna tıklar")
     public void kullanıcıOpsiyonTusunaTıklar() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(menüPage.opsiyonTuşu));
+        wait.until(ExpectedConditions.visibilityOf(menuPage.opsiyonTusu));
         //Thread.sleep(3000);
         Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(menüPage.opsiyonTuşu).perform();
-        menüPage.opsiyonTuşu.click();
+        actions.moveToElement(menuPage.opsiyonTusu).perform();
+        menuPage.opsiyonTusu.click();
 
     }
 
     @And("Kullanıcı Sistem butonuna tıklar")
     public void kullanıcıSistemButonunaTıklar() {
-        menüPage.sistemButonu.click();
+        menuPage.sistemButonu.click();
     }
 
     @And("Kullanıcı “Ortak Tanımlar” butonuna tıklar")
     public void kullanıcıOrtakTanımlarButonunaTıklar() {
-        menüPage.ortakTanimlarButonu.click();
+        menuPage.ortakTanimlarButonu.click();
     }
 
     @And("Kullanıcı “Tatil Günleri” butonuna tıklar")
     public void kullanıcıTatilGunleriButonunaTıklar() {
-        menüPage.tatilGunleriButonu.click();
+        menuPage.tatilGunleriButonu.click();
     }
 
     @Then("Kullanıcı başarılı bir şekilde  “Tatil Günleri” sayfasına yönlendirir")
     public void kullanıcıBasarılıBirSekildeTatilGunleriSayfasınaYonlendirir() {
-
-        Assert.assertTrue(menüPage.tatilGünleriBasligi.isDisplayed());
+        TatilGunleriPage tatil = new TatilGunleriPage();
+        Assert.assertTrue(tatil.tatilGunleriBasligi.isDisplayed());
     }
 
 

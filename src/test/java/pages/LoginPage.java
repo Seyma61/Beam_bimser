@@ -6,9 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-public class Login_Page {
-
-    public Login_Page() {
+public class LoginPage {
+    public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -18,19 +17,19 @@ public class Login_Page {
     @FindBy(xpath = "//input[@id='PV_I']")
     public WebElement sifreInputBox;
 
-    @FindBy(id ="btn_CD")
+    @FindBy(id = "btn_CD")
     public WebElement girisButton;
 
     @FindBy(xpath = "//span[@id='xmmMessage']")
     public WebElement hataUyarisi;
 
-    @FindBy (xpath = "//td[@id='cbCompany_DDD_L_LBI2T0']")
+    @FindBy(xpath = "//td[@id='cbCompany_DDD_L_LBI2T0']")
     public WebElement BimserAcademyDropdownValue;
 
     @FindBy(xpath = "//td[@id='cbCompany_B-1']")
     public WebElement dropdownArrow;
 
-    public void login(String username, String password){
+    public void login(String username, String password) {
         Driver.getDriver().get(ConfigurationReader.getProperty("web.url"));
         dropdownArrow.click();
         BimserAcademyDropdownValue.click();

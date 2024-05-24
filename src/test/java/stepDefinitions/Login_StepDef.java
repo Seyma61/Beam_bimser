@@ -5,14 +5,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import pages.Login_Page;
-import pages.Popup_Page;
+import pages.LoginPage;
+import pages.PopupPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-public class LoginStep_Def {
-    Login_Page loginPage = new Login_Page();
-    Popup_Page popupPage = new Popup_Page();
+public class Login_StepDef {
+
+    LoginPage loginPage = new LoginPage();
+    PopupPage popupPage = new PopupPage();
 
     @Given("kullanıcı giriş ekranındadır")
     public void kullanıcı_giriş_ekranındadır() {
@@ -70,5 +71,5 @@ public class LoginStep_Def {
     public void kullanıcıHatalıGirişMesajınıGörüntüler() {
 
         Assert.assertTrue(loginPage.hataUyarisi.isDisplayed());
-}
     }
+}
