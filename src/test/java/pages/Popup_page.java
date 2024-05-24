@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class PopupPage {
+import javax.swing.*;
 
-    public PopupPage(){
-        PageFactory.initElements(Driver.getDriver(), this);
-
+public class Popup_page {
+    public Popup_page(){
+        PageFactory.initElements(Driver.getDriver(),this);
     }
 
     @FindBy(xpath = "//span[@id='xppcProcurationList_xrblProcurationList_RB0_I_D']")

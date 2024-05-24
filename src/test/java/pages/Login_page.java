@@ -6,10 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-public class LoginPage {
-    public LoginPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+public class Login_page {
+   public Login_page(){
+       PageFactory.initElements(Driver.getDriver(), this);
+   }
 
     @FindBy(xpath = "//input[@id='teUser_I']")
     public WebElement kullaniciAdiInputBox;
@@ -38,4 +38,6 @@ public class LoginPage {
         girisButton.click();
 
     }
+
 }
+

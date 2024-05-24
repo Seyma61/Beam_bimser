@@ -8,9 +8,9 @@ import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.LoginPage;
+import pages.Login_page;
 import pages.MenuPage;
-import pages.PopupPage;
+import pages.Popup_page;
 import pages.TatilGunleriPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -19,9 +19,9 @@ import java.time.Duration;
 
 public class Menu_StepDef {
 
-    LoginPage loginPage = new LoginPage();
+    Login_page loginPage = new Login_page();
     MenuPage menuPage = new MenuPage();
-    PopupPage popupPage = new PopupPage();
+    Popup_page popupPage = new Popup_page();
 
 
 

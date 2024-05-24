@@ -5,15 +5,19 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import pages.LoginPage;
-import pages.PopupPage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.Login_page;
+import pages.Popup_page;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-public class Login_StepDef {
+import java.time.Duration;
 
-    LoginPage loginPage = new LoginPage();
-    PopupPage popupPage = new PopupPage();
+public class LoginStepDefinition {
+
+    Login_page loginPage = new Login_page();
+    Popup_page popupPage = new Popup_page();
 
     @Given("kullanıcı giriş ekranındadır")
     public void kullanıcı_giriş_ekranındadır() {
@@ -46,7 +50,8 @@ public class Login_StepDef {
     @Then("Kullanıcıların listelendiği ekranı görüntülemeli")
     public void kullanıcıların_listelendiği_ekranı_görüntülemeli() {
 
-
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(loginPage.hataUyarisi));
         Assert.assertTrue(popupPage.kullanıcıSecimEkranıHeader.isDisplayed());
 
     }
@@ -68,8 +73,12 @@ public class Login_StepDef {
     }
 
     @Then("Kullanıcı hatalı giriş mesajını görüntüler")
-    public void kullanıcıHatalıGirişMesajınıGörüntüler() {
+    public void kullanıcıHatalıGirişMesajınıGörüntüler() throws InterruptedException {
+
 
         Assert.assertTrue(loginPage.hataUyarisi.isDisplayed());
+
+
     }
 }
+
